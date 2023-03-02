@@ -459,7 +459,7 @@ if __name__ == "__main__":
         help="Choose between Cifar10/100 and ImageNet-16.",
     )
     # channels and number-of-cells
-    parser.add_argument("--config_path", type=str, default="../../configs/nas-benchmark/algos/DARTS.config",
+    parser.add_argument("--config_path", type=str, default="../../configs/nas-benchmark/algos/PCDARTS.config",
                         help="The config path.")
     parser.add_argument("--search_space_name", type=str, default="nas-bench-201", help="The search space name.")
     parser.add_argument("--max_nodes", type=int, default=4, help="The maximum number of nodes.")

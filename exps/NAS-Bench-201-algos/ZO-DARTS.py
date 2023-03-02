@@ -41,7 +41,7 @@ def _prepare_disturbance(network, epoch, logger):  # Generate perturbed structur
     arch_param_vector = torch.cat([torch.flatten(v.data) for v in model_new.module.arch_parameters], dim=0)
     norm = torch.norm(arch_param_vector)
     mu = norm * 0.005
-    logger.log("/epoch="+epoch+" norm={:.2f}".format(norm.item()))
+    
     perturbation = torch.reshape(z, model_new.module.arch_parameters.shape) * mu
     model_new.module.arch_parameters.data = model_new.module.arch_parameters.data + perturbation.data
     return model_new, z, mu
